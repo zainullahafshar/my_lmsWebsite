@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zainullah | IT Infrastructure Engineer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<!-- ===== SECTION OVERLAY ===== -->
+<div id="sectionOverlay" class="section-overlay">
+  <div class="ov-glow ov-glow-1"></div>
+  <div class="ov-glow ov-glow-2"></div>
+  <div class="ov-glow ov-glow-3"></div>
+  <div class="overlay-content">
+    <div class="overlay-header">
+      <div class="overlay-header-left">
+        <div id="overlayIcon" class="overlay-icon"></div>
+        <div>
+          <h2 id="overlayTitle"></h2>
+          <span id="overlaySubtitle"></span>
+        </div>
+      </div>
+      <div class="overlay-header-right">
+        <div id="overlayBadge" class="ov-badge"></div>
+        <button class="overlay-close-btn" onclick="closeSection()">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </div>
+    <div id="overlayBody"></div>
+  </div>
+</div>
+
+<header id="navbar">
+    <div class="container nav">
+        <h2 class="logo">Zainullah Afshar</h2>
+                <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul id="navList">
+           <li><a href="javascript:void(0)" onclick="openSection('#about')">About</a></li>
+<li><a href="javascript:void(0)" onclick="openSection('#skills')">Courses</a></li>
+<li><a href="javascript:void(0)" onclick="openSection('#projects')">Projects</a></li>
+<li><a href="javascript:void(0)" onclick="openSection('#contact')">Contact</a></li>
+<li id="navAuth"></li>
+        </ul>
+    </div>
+</header>
+
+<section class="hero">
+    
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+        <div class="hero-profile">
+    <img src="assets/images/IT_Zainullah.png" alt="Zainullah Profile">
+     </div>
+        <div class="hero-text">
+            <h1>Hi, I'm Zainullah</h1>
+            <h2><span class="typing"></span></h2>
+            <p style="margin-left: 26%;" >
+                Specialized in Linux Administration, Cisco Networking,
+                Windows Server Infrastructure, Cyber Security & Enterprise Solutions.
+            </p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn">Hire Me</a>
+                <a href="assets/Zainullah.PDF" download class="btn-outline">
+                Download CV
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="section reveal">
+    <div class="container about">
+        <div class="about-img">
+            <img src="assets/images/background_img.png" alt="">
+        </div>
+        <div class="about-text">
+            <h2>About Me</h2>
+            <p>
+                I am an IT Infrastructure Engineer with strong experience in
+                enterprise network architecture, secure server environments,
+                and scalable IT system deployment.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Tempora veritatis harum culpa natus illum consequatur et blanditiis. <br> Voluptates, eius natus, iste molli
+                tia quia laboriosam eligendi consequuntur necessitatibus nemo, dolore ipsum!
+            </p>
+            <p>
+                My mission is to deliver secure, optimized and business-ready
+                IT solutions for modern organizations.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="skills" class="section dark reveal">
+    <div class="container">
+        <h2 class="section-title">Technical Courses</h2>
+        <div class="grid">
+
+            <div class="card">
+               <div class="course-icon" style="background:linear-gradient(135deg,#f97316,#ea580c);"><i class="fa-brands fa-linux"></i></div>
+                <h3>Linux Administration</h3>
+                <p>SSH, Apache, Nginx, Bash, System Hardening</p> <br> <br>
+                
+                <button class="course-btn" onclick="openCourseWithAuth(openLinuxCourse)">
+                 Linux Full Course
+                 </button>
+            </div>
+
+            <div class="card">
+                <div class="course-icon" style="background:linear-gradient(135deg,#3b82f6,#1e40af);"><i class="fa-solid fa-network-wired"></i></div>
+                <h3>Cisco Networking</h3>
+                <p>Routing, Switching, VLAN, OSPF, CCNA, CCNP, CCIE</p> <br> <br>
+                <button class="course-btn"onclick="openCourseWithAuth(openCCNACourse)">
+                    CCNA Full Course
+                </button>
+            </div>
+
+            <div class="card">
+               <div class="course-icon" style="background:linear-gradient(135deg,#0ea5e9,#0369a1);"><i class="fa-brands fa-windows"></i></div>
+                <h3>Windows Server</h3>
+                <p>Active Directory, DNS, DHCP, Group Policy</p> <br> <br>
+                <button class="course-btn" onclick="openCourseWithAuth(openWindowsCourse)">
+                 Windows Server Full Course
+                </button>
+            </div>
+
+            <div class="card">
+               <div class="course-icon" style="background:linear-gradient(135deg,#ef4444,#b91c1c);"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>Cyber Security</h3>
+                <p>Firewall, VPN, Access Control, Monitoring</p> <br> <br>
+                <button class="course-btn" onclick="openCourseWithAuth(openCyberCourse)">
+                Cybersecurity Full Course
+                </button>
+            </div>
+          <div class="card reveal">
+           <div class="course-icon" style="background:linear-gradient(135deg,#a855f7,#7c3aed);"><i class="fa-solid fa-brain"></i></div>
+            <h3>AI Complete Course</h3>
+            <p>Artificial Intelligence from basics to advanced.</p>
+           <button class="course-btn" onclick="openCourseWithAuth(openAICourse)">
+            View Course
+          </button>
+          </div>
+
+          <div class="card reveal">
+            <div class="course-icon" style="background:linear-gradient(135deg,#eab308,#3b82f6);"><i class="fa-brands fa-python"></i></div>
+            <h3>Python Complete Course</h3>
+            <p>Python programming from beginner to expert.</p>
+            <button class="course-btn" onclick="openCourseWithAuth(openPythonCourse)">
+              View Course
+            </button>
+          </div>
+
+          <div class="card reveal">
+            <div class="course-icon" style="background:linear-gradient(135deg,#22c55e,#15803d);"><i class="fa-solid fa-code"></i></div>
+            <h3>Programming Fundamentals</h3>
+            <p>Core programming concepts and logic building.</p>
+            <button class="course-btn" onclick="openCourseWithAuth(openProgrammingCourse)">
+              View Course
+            </button>
+          </div>
+
+          <div class="card reveal">
+            <div class="course-icon" style="background:linear-gradient(135deg,#14b8a6,#0f766e);"><i class="fa-solid fa-globe"></i></div>
+            <h3>Web Development Course</h3>
+            <p>HTML, CSS, JS complete training.</p>
+            <button class="course-btn"onclick="openCourseWithAuth(openWebCourse)">
+              View Course
+            </button>
+          </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="section reveal">
+    <div class="container">
+        <h2 class="section-title">Major Projects</h2>
+        <div class="grid">    
+            <div class="card">
+
+            <img src="assets/images/project1.png" class="project-img" alt="Enterprise Network">
+
+            <h3>Enterprise Network Deployment</h3>
+            <p>Full VLAN segmentation and firewall security setup.</p>
+
+            <div class="project-actions">
+                <a href="assets/projects/project1.pkt" download class="course-btn">
+                Download Packet Tracer File
+                </a>
+            </div>
+
+            </div>
+
+
+           <div class="card">
+
+                <img src="assets/images/project2.png" class="project-img" alt="Linux Server">
+
+                <h3>Linux Production Server</h3>
+                <p>Configured secure web server with optimization.</p>
+
+                <div class="project-actions">
+                    <a href="assets/projects/project2.pkt" download class="course-btn">
+                    Download Packet Tracer File
+                    </a>
+                </div>
+
+            </div>
+
+        <div class="card">
+
+                <img src="assets/images/project3.png" class="project-img" alt="Active Directory">
+
+                <h3>Active Directory Infrastructure</h3>
+                <p>Domain controller setup with centralized management.</p>
+
+                <div class="project-actions">
+                    <a href="assets/projects/project3.pkt" download class="course-btn">
+                    Download Packet Tracer File
+                    </a>
+                </div>
+
+                </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="section dark reveal">
+    <div class="container contact">
+        <h2 class="section-title">Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea placeholder="Your Message"></textarea>
+            <button class="btn">Send Message</button>
+        </form>
+    </div>
+    
+</section>
+
+<!-- ================= LINUX COURSE SECTION ================= -->
+
+<section id="linux-course" class="linux-course-section">
+
+    <div class="course-container">
+
+        <div class="course-header">
+            <h2>Linux Operating System - Complete Professional Course</h2>
+            <button class="close-btn" onclick="closeLinuxCourse()">Close</button>
+        </div>
+
+        <div class="course-content">
+
+            <h3>1. What is Linux?</h3>
+           <p> 
+        This Linux  course teaches the linux fundtamental intemediate advace etc..
+        lkdsafjalskdfakllk
+      </p>
+
+    </div>
+
+</section>
+<section id="ccna-course" class="linux-course-section">
+
+  <div class="course-container">
+
+    <div class="course-header">
+      <h2>CCNA – Cisco Certified Network Associate</h2>
+      <button class="close-btn" onclick="closeLinuxCourse()">Close</button>
+    </div>
+
+    <div class="course-content">
+      <h3>Course Overview</h3>
+      <p>
+        This CCNA course teaches the fundamentals of computer networking,
+        routing, switching, and network troubleshooting.
+      </p>
+
+      <h3>What You Will Learn</h3>
+      <ul>
+        <li>Basics of Computer Networks</li>
+        <li>LAN, WAN, MAN concepts</li>
+        <li>IP Addressing & Subnetting</li>
+        <li>Routing & Switching</li>
+        <li>Introduction to Cisco Devices</li>
+      </ul>
+
+      <p class="course-end">
+         Below is a complete A–Z structured course roadmap for CCNA
+         1️⃣ Introduction Network
+        </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="windows-course" class="linux-course-section">
+
+  <div class="course-container">
+
+    <div class="course-header">
+      <h2>Windows Server – Full Professional Course</h2>
+      <button class="close-btn" onclick="closeLinuxCourse()">Close</button>
+    </div>
+
+    <div class="course-content">
+      <h3>Course Overview</h3>
+      <p>
+        Windows Server course focuses on managing enterprise networks,
+        users, security, and server infrastructure.
+      </p>
+
+      <h3>Main Topics</h3>
+      <ul>
+        <li>Windows Server Introduction</li>
+        <li>Active Directory (AD DS)</li>
+        <li>DNS & DHCP</li>
+        <li>Group Policy (GPO)</li>
+        <li>File & Storage Management</li>
+      </ul>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="cyber-course" class="linux-course-section">
+
+  <div class="course-container">
+
+    <div class="course-header">
+      <h2>Cybersecurity – Complete Fundamentals</h2>
+      <button class="close-btn" onclick="closeLinuxCourse()">Close</button>
+    </div>
+
+    <div class="course-content">
+      <h3>Course Overview</h3>
+      <p>
+        This cybersecurity course introduces security principles,
+        threats, and protection techniques.
+      </p>
+
+      <h3>Core Topics</h3>
+      <ul>
+        <li>What is Cybersecurity?</li>
+        <li>CIA Triad</li>
+        <li>Threats & Vulnerabilities</li>
+        <li>Malware & Attacks</li>
+        <li>Firewalls & Network Security</li>
+      </ul>
+
+      <p class="course-end">
+        Below is a complete A–Z Cybersecurity Course Roadmap, structured in professional sequence from fundamentals to advanced specialization. This is designed like a university + industry certification path combined.
+🔐 COMPLETE CYBERSECURITY COURSE (A–Z)
+📘 MODULE 1: Introduction to Cybersecurity
+1.1 What is Cybersecurity?
+Cybersecurity is the practice of protecting:
+Networks
+Systems
+Applications
+      </p>
+    </div>
+
+  </div>
+</section>
+  <!-- ===============The 4 new cousre AI, PYHTON, Programming fundamental, Web development -->
+<section id="ai-course" class="linux-course-section">
+
+<div class="course-container">
+
+<div class="course-header">
+<h2>Artificial Intelligence – Complete Course</h2>
+<button class="close-btn" onclick="closeLinuxCourse()">Close</button>
+</div>
+
+<div class="course-content">
+
+<h3>Course Overview</h3>
+<p>
+This Artificial Intelligence course teaches AI fundamentals,
+machine learning basics, neural networks and real world AI systems.
+This Artificial Intelligence course teaches AI fundamentals,
+machine learning basics, neural networks and real world AI systems.
+</p>
+</p>
+
+<ul>
+<li>Introduction to AI</li>
+<li>Machine Learning Basics</li>
+<li>Neural Networks</li>
+<li>Deep Learning</li>
+<li>Real World AI Applications</li>
+</ul>
+
+</div>
+</div>
+</section>
+<!-- Python Course  -->
+ <section id="python-course" class="linux-course-section">
+
+<div class="course-container">
+
+<div class="course-header">
+<h2>Python Programming – Complete Course</h2>
+<button class="close-btn" onclick="closeLinuxCourse()">Close</button>
+</div>
+
+<div class="course-content">
+
+<h3>Course Overview</h3>
+<p>
+This course teaches Python programming from beginner to advanced.
+</p>
+
+<ul>
+<li>Python Basics</li>
+<li>Variables and Data Types</li>
+<li>Loops and Conditions</li>
+<li>Functions</li>
+<li>Object Oriented Programming</li>
+</ul>
+
+</div>
+</div>
+</section>
+<!-- Prgramming Fundamental -->
+ <section id="programming-course" class="linux-course-section">
+
+<div class="course-container">
+
+<div class="course-header">
+<h2>Programming Fundamentals</h2>
+<button class="close-btn" onclick="closeLinuxCourse()">Close</button>
+</div>
+
+<div class="course-content">
+
+<h3>Course Overview</h3>
+<p>
+Learn core programming logic used in all programming languages.
+</p>
+
+<ul>
+<li>Algorithms</li>
+<li>Flowcharts</li>
+<li>Variables</li>
+<li>Loops</li>
+<li>Functions</li>
+</ul>
+
+</div>
+</div>
+</section>
+<!-- Web Development  Course -->
+<section id="web-course" class="linux-course-section">
+
+<div class="course-container">
+
+<div class="course-header">
+<h2>Web Development – Complete Course</h2>
+<button class="close-btn" onclick="closeLinuxCourse()">Close</button>
+</div>
+
+<div class="course-content">
+
+<h3>Course Overview</h3>
+<p>
+Learn how to build websites using HTML, CSS and JavaScript.
+</p>
+
+<ul>
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+<li>Responsive Design</li>
+<li>Website Deployment</li>
+</ul>
+
+</div>
+</div>
+</section>
+<!-- ================= AUTH MODAL ================= -->
+<div id="authModal" class="auth-modal-overlay">
+  <div class="auth-modal-box">
+    <button class="auth-close-btn" onclick="hideAuthModal()"><i class="fa-solid fa-xmark"></i></button>
+    <div class="auth-modal-logo">
+      <div class="auth-modal-icon"><i class="fa-solid fa-server"></i></div>
+      <div>
+        <h3>Zainullah Academy</h3>
+        <span>Access Professional IT Courses</span>
+      </div>
+    </div>
+    <div class="auth-tabs">
+      <button class="auth-tab active" data-tab="login" onclick="switchAuthTab('login')">Sign In</button>
+      <button class="auth-tab" data-tab="register" onclick="switchAuthTab('register')">Create Account</button>
+    </div>
+    <!-- Login Panel -->
+    <div id="loginPanel" class="auth-form-panel">
+      <form id="loginForm" onsubmit="handleLogin(event)">
+        <div class="auth-field">
+          <label><i class="fa-solid fa-envelope"></i> Email Address</label>
+          <input id="loginEmail" type="email" placeholder="your@email.com" required>
+        </div>
+        <div class="auth-field">
+          <label><i class="fa-solid fa-lock"></i> Password</label>
+          <input id="loginPass" type="password" placeholder="Enter your password" required>
+        </div>
+        <p id="authLoginMsg" class="auth-msg"></p>
+        <button type="submit" class="auth-submit-btn"><i class="fa-solid fa-right-to-bracket"></i> Sign In</button>
+      </form>
+      <p class="auth-switch">No account? <a href="javascript:void(0)" onclick="switchAuthTab('register')">Create one free</a></p>
+    </div>
+    <!-- Register Panel -->
+    <div id="registerPanel" class="auth-form-panel" style="display:none;">
+      <form id="registerForm" onsubmit="handleRegister(event)">
+        <div class="auth-field">
+          <label><i class="fa-solid fa-user"></i> Full Name</label>
+          <input id="regName" type="text" placeholder="Your full name" required>
+        </div>
+        <div class="auth-field">
+          <label><i class="fa-solid fa-envelope"></i> Email Address</label>
+          <input id="regEmail" type="email" placeholder="your@email.com" required>
+        </div>
+        <div class="auth-field">
+          <label><i class="fa-solid fa-lock"></i> Password</label>
+          <input id="regPass" type="password" placeholder="Min. 6 characters" required>
+        </div>
+        <div class="auth-field">
+          <label><i class="fa-solid fa-shield-halved"></i> Confirm Password</label>
+          <input id="regConfirm" type="password" placeholder="Repeat password" required>
+        </div>
+        <p id="authRegisterMsg" class="auth-msg"></p>
+        <button type="submit" class="auth-submit-btn"><i class="fa-solid fa-user-plus"></i> Create Account</button>
+      </form>
+      <p class="auth-switch">Already registered? <a href="javascript:void(0)" onclick="switchAuthTab('login')">Sign in</a></p>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<!-- Footer Section -->
+<!-- ================= PROFESSIONAL FOOTER ================= -->
+<footer class="pro-footer">
+
+  <!-- Glowing background blobs -->
+  <div class="footer-glow footer-glow-1"></div>
+  <div class="footer-glow footer-glow-2"></div>
+
+  <!-- Stats Bar -->
+  <div class="footer-stats-bar">
+    <div class="footer-stat">
+      <span class="stat-number">5+</span>
+      <span class="stat-label">Years Experience</span>
+    </div>
+    <div class="footer-stat-divider"></div>
+    <div class="footer-stat">
+      <span class="stat-number">8</span>
+      <span class="stat-label">Professional Courses</span>
+    </div>
+    <div class="footer-stat-divider"></div>
+    <div class="footer-stat">
+      <span class="stat-number">20+</span>
+      <span class="stat-label">Projects Completed</span>
+    </div>
+    <div class="footer-stat-divider"></div>
+    <div class="footer-stat">
+      <span class="stat-number">3</span>
+      <span class="stat-label">Certifications</span>
+    </div>
+  </div>
+
+  <!-- Main Footer Grid -->
+  <div class="footer-container">
+
+    <!-- Column 1: Brand -->
+    <div class="footer-col footer-brand">
+      <div class="footer-logo">
+        <div class="footer-logo-icon"><i class="fa-solid fa-server"></i></div>
+        <div>
+          <h3>Zainullah Afshar</h3>
+          <span class="footer-logo-tag">IT Infrastructure Engineer</span>
+        </div>
+      </div>
+      <p>Specialized in Linux Administration, Cisco Networking, Windows Server Infrastructure, Cyber Security and Enterprise IT Solutions.</p>
+      <div class="footer-availability">
+        <span class="availability-dot"></span>
+        Available for Freelance & Remote Work
+      </div>
+          <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/zainullah-afshar-547146307?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://github.com/zainullahafshar" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://youtube.com/@zainullahafshar?si=V2hAtF7koYixJUFY" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://t.me/ZainullahAfshar" target="_blank" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
+               <a href="https://wa.me/93772826386" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+    <!-- Column 2: Courses -->
+    <div class="footer-col">
+      <h4><i class="fa-solid fa-graduation-cap"></i> My Courses</h4>
+      <ul class="footer-links">
+               <li><a href="javascript:void(0)" onclick="openCourseWithAuth(openLinuxCourse)"><i class="fa-brands fa-linux"></i> Linux Administration</a></li>
+        <li><a href="javascript:void(0)" onclick="openCourseWithAuth(openCCNACourse)"><i class="fa-solid fa-network-wired"></i> CCNA Networking</a></li>
+        <li><a href="javascript:void(0)" onclick="openCourseWithAuth(openWindowsCourse)"><i class="fa-brands fa-windows"></i> Windows Server</a></li>
+        <li><a href="javascript:void(0)" onclick="openCourseWithAuth(openCyberCourse)"><i class="fa-solid fa-shield-halved"></i> Cyber Security</a></li>
+        <li><a href="javascript:void(0)" onclick="openCourseWithAuth(openAICourse)"><i class="fa-solid fa-brain"></i> AI Complete Course</a></li>
+        <li><a href="javascript:void(0)" onclick="openCourseWithAuth(openPythonCourse)"><i class="fa-brands fa-python"></i> Python Course</a></li>
+        <li><a href="javascript:void(0)" onclick="openCourseWithAuth(openProgrammingCourse)"><i class="fa-solid fa-code"></i> Programming Fundamentals</a></li>
+        <li><a href="javascript:void(0)" onclick="openCourseWithAuth(openWebCourse)"><i class="fa-solid fa-globe"></i> Web Development</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3: Quick Links -->
+    <div class="footer-col">
+      <h4><i class="fa-solid fa-link"></i> Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="javascript:void(0)" onclick="openSection('#about')"><i class="fa-solid fa-user"></i> About Me</a></li>
+        <li><a href="javascript:void(0)" onclick="openSection('#skills')"><i class="fa-solid fa-book-open"></i> All Courses</a></li>
+        <li><a href="javascript:void(0)" onclick="openSection('#projects')"><i class="fa-solid fa-diagram-project"></i> Projects</a></li>
+        <li><a href="javascript:void(0)" onclick="openSection('#contact')"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+        <li><a href="assets/Zainullah.PDF" download><i class="fa-solid fa-file-arrow-down"></i> Download CV</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 4: Contact Info -->
+    <div class="footer-col">
+      <h4><i class="fa-solid fa-address-card"></i> Contact Info</h4>
+      <ul class="footer-links footer-contact-list">
+        <li><i class="fa-solid fa-envelope"></i> zainullah@email.com</li>
+        <li><i class="fa-solid fa-phone"></i> +93 XXX XXX XXXX</li>
+        <li><i class="fa-solid fa-location-dot"></i> Kabul, Afghanistan</li>
+        <li><i class="fa-solid fa-clock"></i> Available: Mon – Sat</li>
+        <li><i class="fa-solid fa-globe"></i> Open for Remote Work</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Tech Stack Bar -->
+  <div class="footer-tech-bar">
+    <span class="tech-bar-label">Tech Stack:</span>
+    <div class="tech-badges">
+      <span class="tech-badge"><i class="fa-brands fa-linux"></i> Linux</span>
+      <span class="tech-badge"><i class="fa-solid fa-network-wired"></i> Cisco</span>
+      <span class="tech-badge"><i class="fa-brands fa-windows"></i> Windows Server</span>
+      <span class="tech-badge"><i class="fa-solid fa-shield-halved"></i> Cybersecurity</span>
+      <span class="tech-badge"><i class="fa-brands fa-python"></i> Python</span>
+      <span class="tech-badge"><i class="fa-solid fa-brain"></i> AI / ML</span>
+      <span class="tech-badge"><i class="fa-solid fa-globe"></i> Web Dev</span>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>&copy; 2026 <span>Zainullah Afshar</span>. All Rights Reserved.</p>
+    <p>Designed &amp; Developed with <i class="fa-solid fa-heart" style="color:#ef4444;"></i> by <span>Zainullah</span></p>
+  </div>
+
+</footer>
